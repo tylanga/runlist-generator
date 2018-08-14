@@ -84,12 +84,14 @@ $(document).on('click', '.save', function(e) {
 });
 
 // click delete event //
-$(document).on('click', '.delete', function() {
+$(document).on('click', '.delete', function(e) {
   console.log(this);
   console.log(this.childElementCount);
+  console.log(e.target.parentElement.parentElement.sectionRowIndex);
   // remove item from array via splice
   // var itemIndex = this.childElementCount;
-  var index = this.childElementCount;
+  var index = e.target.parentElement.parentElement.sectionRowIndex;
+  // var index = this.childElementCount;
   if (index > -1) {
     fileList.splice(index, 1);
   }
@@ -166,8 +168,11 @@ function removeRunlistItem() {
   console.log(listing);
   for (let file of Array.from(fileList)) {
     let item = document.createElement('li');
+    console.log(file.path);
     item.textContent = file.path;
-    listing.innerHTML += "\n" + file.path + "     " + file.stationNumber;
+    let b = item.textContent.replace(/\//g, '\\\\');
+    file.path = b;
+    listing.innerHTML += "\n" + b + "     " + file.stationNumber;
   };
 }
 
