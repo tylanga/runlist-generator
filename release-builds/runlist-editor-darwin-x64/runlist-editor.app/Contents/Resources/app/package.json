@@ -1,0 +1,24 @@
+{
+  "name": "runlist-editor",
+  "version": "1.0.1",
+  "description": "An application built by Tyler Thompson",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/tylanga/runlist-generator.git",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "Tyler Thompson",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^2.0.0",
+    "electron-installer-dmg": "^2.0.0",
+    "electron-packager": "^12.1.0"
+  }
+}
