@@ -150,10 +150,12 @@ fileDrag.addEventListener("drop", (e) => {
     // console.log(file);
     // replace all forward slash with double back slash
     let b = item.textContent.replace(/\//g, '\\\\');
-    file.path = b;
-    console.log(b);
+    //replace the word Volumes with E:
+    let o = b.replace(/\\\\Users\\\\/g, "\\\\E:\\\\");
+    file.path = o;
+    console.log(o);
     file.stationNumber = fileList.length + 1;
-    listing.innerHTML += "\n" + b + "     " + file.stationNumber;
+    listing.innerHTML += "\n" + o + "     " + file.stationNumber;
     fileList.push(file);
     console.log(fileList);
   };
@@ -171,8 +173,11 @@ function removeRunlistItem() {
     console.log(file.path);
     item.textContent = file.path;
     let b = item.textContent.replace(/\//g, '\\\\');
-    file.path = b;
-    listing.innerHTML += "\n" + b + "     " + file.stationNumber;
+    //replace the word Volumes with E:
+    let o = b.replace(/\\\\Users\\\\/g, "\\\\E:\\\\");
+    file.path = o;
+    console.log(o);
+    listing.innerHTML += "\n" + o + "     " + file.stationNumber;
   };
 }
 
