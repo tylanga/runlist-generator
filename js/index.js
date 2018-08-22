@@ -151,7 +151,7 @@ fileDrag.addEventListener("drop", (e) => {
     // replace all forward slash with double back slash
     let b = item.textContent.replace(/\//g, '\\\\');
     //replace the word Volumes with E:
-    let o = b.replace(/\\\\Users\\\\/g, "\\\\E:\\\\");
+    let o = b.replace(/\\\\Volumes\\\\/g, "\\\\E:\\\\");
     file.path = o;
     console.log(o);
     file.stationNumber = fileList.length + 1;
@@ -174,7 +174,7 @@ function removeRunlistItem() {
     item.textContent = file.path;
     let b = item.textContent.replace(/\//g, '\\\\');
     //replace the word Volumes with E:
-    let o = b.replace(/\\\\Users\\\\/g, "\\\\E:\\\\");
+    let o = b.replace(/\\\\Volumes\\\\/g, "\\\\E:\\\\");
     file.path = o;
     console.log(o);
     listing.innerHTML += "\n" + o + "     " + file.stationNumber;
