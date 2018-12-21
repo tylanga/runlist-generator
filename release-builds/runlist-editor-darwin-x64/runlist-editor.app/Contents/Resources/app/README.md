@@ -1,3 +1,14 @@
+## Save to Git
+git add .
+git commit -m "added the replacement of Volumes with E:"
+git push https://github.com/tylanga/runlist-generator.git
+
+
+**How to build app**
+electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/runlist_icon.icns --prune=true --out=release-builds
+
+
+
 # electron-quick-start
 
 **Clone and run for a quick way to see Electron in action.**
