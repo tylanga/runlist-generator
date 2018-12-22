@@ -1,6 +1,7 @@
 // import { stat } from "original-fs";
 
 
+// $(".alert").hide();
 
 $(document).on('click', '.edit', function(e) {
   $(this).parent().siblings('td.data').each(function() {
@@ -151,11 +152,12 @@ fileDrag.addEventListener("drop", (e) => {
     // replace all forward slash with double back slash
     let b = item.textContent.replace(/\//g, '\\\\');
     //replace the word Volumes with E:
-    let o = b.replace(/\\\\Volumes\\\\/g, "\\\\E:\\\\");
+    let o = b.replace(/\\\\Volumes\\\\/g, "\\\\E:\\\\").substr(2);
     file.path = o;
     console.log(o);
+    // console.log(o.substr(2));
     file.stationNumber = fileList.length + 1;
-    listing.innerHTML += "\n" + o + "     " + file.stationNumber;
+    listing.innerHTML += "\n" + o + "\t" + file.stationNumber;
     fileList.push(file);
     console.log(fileList);
   };
@@ -177,7 +179,7 @@ function removeRunlistItem() {
     let o = b.replace(/\\\\Volumes\\\\/g, "\\\\E:\\\\");
     file.path = o;
     console.log(o);
-    listing.innerHTML += "\n" + o + "     " + file.stationNumber;
+    listing.innerHTML += "\n" + o + "\t" + file.stationNumber;
   };
 }
 
@@ -303,4 +305,10 @@ $("#btn-save").click( function() {
   var filename = $("#input-fileName").val()
   var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
   saveAs(blob, filename+".txt");
+  // $(".alert").show();
+  $("#message").removeClass('slideUp');
+  setTimeout(function() {
+   console.log("test timeout");
+   $("#message").addClass('slideUp');
+}, 4000);
 });

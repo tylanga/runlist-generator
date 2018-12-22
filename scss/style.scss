@@ -1,3 +1,5 @@
+@import "compass/css3";
+
 body{
   font-family: Arial, sans-serif;
 }
@@ -20,7 +22,7 @@ h1, h3{
 .station{
   flex: 1;
 }
-.action{
+.actions{
   flex: 1;
   position: relative;
   height: 25px;
@@ -95,7 +97,8 @@ h1, h3{
   flex: 1;
   outline: none;
   background: none;
-  border: none;
+	border: none;
+	min-width: fit-content !important;
 }
 
 .edit, .save, .delete{

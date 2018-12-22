@@ -102,11 +102,27 @@ label {
   display: flex;
 }
 
+#message {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  width: fit-content;
+  transition: transform linear .3s;
+  /* transform: translate(0,100%); */
+}
+
+.slideUp
+{
+  transform: translate(0,-100%);
+  opacity: .25;
+}
+
 .add, .edit, .save, .delete {
   flex: 1;
   outline: none;
   background: none;
   border: none;
+  min-width: fit-content;
 }
 
 .edit, .save, .delete {
