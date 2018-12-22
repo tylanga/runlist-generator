@@ -22,6 +22,7 @@
     "electron-packager": "^12.2.0"
   },
   "dependencies": {
+    "cryptiles": "^4.1.3",
     "electron-builder": "^20.38.4"
   }
 }
