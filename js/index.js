@@ -34,7 +34,7 @@ $(document).on('click', '.save', function(e) {
   console.log(tableRowIndex);
   console.log(arrayIndex);
   tableRow.each(function(i) {
-  console.log(i);
+    console.log(i);
     // console.log(this);
     // console.log(tableRowIndex);
     if (i === arrayIndex) {      
@@ -176,7 +176,7 @@ function removeRunlistItem() {
     item.textContent = file.path;
     let b = item.textContent.replace(/\//g, '\\\\');
     //replace the word Volumes with E:
-    let o = b.replace(/\\\\Volumes\\\\/g, "\\\\E:\\\\");
+    let o = b.replace(/\\\\Volumes\\\\/g, "\\\\E:\\\\").substr(2);
     file.path = o;
     console.log(o);
     listing.innerHTML += "\n" + o + "\t" + file.stationNumber;
